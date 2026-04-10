@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fé & Razão — Respostas para Perguntas Reais</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg:        #0e0e0e;
@@ -14,24 +14,71 @@
       --gold:      #c9a84c;
       --gold-dim:  #8a6e2f;
       --text:      #f5f0e8;
-      --text-muted:#b8afa0;
+      --text-muted:#c8bfb0;
       --accent:    #e8d0b0;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'Source Serif 4', Georgia, serif; font-weight: 400; line-height: 1.8; overflow-x: hidden; }
 
-    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; background: rgba(14,14,14,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(14,14,14,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
     .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.05em; text-decoration: none; }
     .nav-links { display: flex; gap: 1.6rem; list-style: none; flex-wrap: wrap; }
     .nav-links a { color: var(--gold); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.3s; }
     .nav-links a:hover { color: #fff; }
 
-    #hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden; }
-    #hero::before { content: ''; position: absolute; top: -20%; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); pointer-events: none; }
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -20%; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
 
     .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
     .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 700; line-height: 1.1; max-width: 900px; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s 0.4s forwards; }
@@ -52,16 +99,16 @@
     section { position: relative; z-index: 1; padding: 6rem 2rem; }
     .container { max-width: 860px; margin: 0 auto; }
     .section-label { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem; color: var(--text); }
     .section-title em { font-style: italic; color: var(--gold); }
     .divider { width: 60px; height: 1px; background: var(--gold-dim); margin: 1.5rem 0 2rem; }
-    p { margin-bottom: 1.2rem; color: var(--text); }
+
+    p { margin-bottom: 1.2rem; color: var(--text); font-size: 1rem; }
     p:last-child { margin-bottom: 0; }
 
     .quote-block { border-left: 2px solid var(--gold); padding: 1.2rem 1.8rem; margin: 2rem 0; background: var(--surface); }
     .quote-block p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--accent); margin: 0; }
 
-    /* ── BANNER LINHA DO TEMPO ── */
     .timeline-banner {
       display: flex;
       align-items: center;
@@ -77,59 +124,32 @@
       transition: border-color 0.3s, background 0.3s;
       cursor: pointer;
     }
-
-    .timeline-banner:hover {
-      border-color: var(--gold);
-      background: var(--surface);
-    }
-
-    .timeline-banner-left h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--gold);
-      margin-bottom: 0.3rem;
-    }
-
-    .timeline-banner-left p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin: 0;
-    }
-
-    .timeline-banner-right {
-      font-size: 0.78rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
+    .timeline-banner:hover { border-color: var(--gold); background: var(--surface); }
+    .timeline-banner-left h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); margin-bottom: 0.3rem; }
+    .timeline-banner-left p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+    .timeline-banner-right { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); white-space: nowrap; display: flex; align-items: center; gap: 0.5rem; }
     .timeline-banner-right::after { content: '↗'; font-size: 1rem; }
 
-    /* ── SEÇÕES ── */
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 2.5rem 0; background: var(--border); }
     .col-card { background: var(--surface2); padding: 2rem; }
     .col-card h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); margin-bottom: 1rem; }
-    .col-card p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .col-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.6rem; }
 
     .flow-steps { margin: 2.5rem 0; display: flex; flex-direction: column; }
     .flow-step { display: flex; align-items: flex-start; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
     .flow-step:last-child { border-bottom: none; }
     .step-icon { width: 36px; height: 36px; min-width: 36px; border: 1px solid var(--gold-dim); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 0.85rem; color: var(--gold); margin-top: 0.2rem; }
     .step-content h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--accent); margin-bottom: 0.4rem; }
-    .step-content p { font-size: 0.92rem; color: var(--text-muted); margin: 0; }
+    .step-content p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
 
     .reason-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
     .reason-item { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; padding: 1.5rem; border: 1px solid var(--border); transition: border-color 0.3s, background 0.3s; }
     .reason-item:hover { border-color: var(--gold-dim); background: var(--surface2); }
     .reason-tag { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); padding: 0.5rem 0; }
     .reason-body h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
-    .reason-body p { font-size: 0.92rem; color: var(--text-muted); margin: 0; }
+    .reason-body p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
 
-    .compare-table { width: 100%; border-collapse: collapse; margin: 2.5rem 0; font-size: 0.92rem; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 2.5rem 0; font-size: 0.95rem; }
     .compare-table th { font-family: 'Playfair Display', serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); padding: 1rem 1.2rem; border-bottom: 1px solid var(--gold-dim); text-align: left; }
     .compare-table td { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; }
     .compare-table tr:last-child td { border-bottom: none; }
@@ -144,7 +164,7 @@
     .logic-step:last-child .logic-line { display: none; }
     .logic-content { padding-bottom: 1.5rem; flex: 1; }
     .logic-content h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--accent); margin-bottom: 0.3rem; }
-    .logic-content p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+    .logic-content p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
 
     #indice { background: var(--bg); }
     .index-list { margin-top: 2rem; display: flex; flex-direction: column; border: 1px solid var(--border); }
@@ -154,7 +174,7 @@
     .index-num { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--gold-dim); min-width: 2rem; }
     .index-text { display: flex; flex-direction: column; }
     .index-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold); }
-    .index-sub { font-size: 0.82rem; color: var(--text-muted); }
+    .index-sub { font-size: 0.85rem; color: var(--text-muted); }
     .index-arrow { margin-left: auto; color: var(--gold-dim); font-size: 1rem; }
 
     #contato { background: var(--surface); text-align: center; }
@@ -222,8 +242,6 @@
       <div class="divider reveal"></div>
       <p class="reveal">Antes de responder qualquer pergunta sobre o sofrimento, precisamos entender onde estamos na história. A Bíblia não é uma coleção de regras ou histórias isoladas — é uma narrativa com arco completo.</p>
       <p class="reveal">Compreender esse arco muda radicalmente como interpretamos o mal, o sofrimento e o silêncio de Deus.</p>
-
-      <!-- BANNER LINHA DO TEMPO -->
       <a href="linha-do-tempo.html" target="_blank" class="timeline-banner reveal">
         <div class="timeline-banner-left">
           <h4>Linha do Tempo — O Arco da Redenção</h4>
@@ -231,7 +249,6 @@
         </div>
         <span class="timeline-banner-right">Explorar</span>
       </a>
-
       <div class="quote-block reveal"><p>"Você está sofrendo dentro de Gênesis 4 a Apocalipse 19 — e Deus também está trabalhando exatamente aqui."</p></div>
     </div>
   </section>
@@ -373,17 +390,22 @@
       <h2 class="section-title reveal"><em>Você tem perguntas.</em><br/>Estamos aqui.</h2>
       <div class="divider reveal" style="margin-left:auto; margin-right:auto;"></div>
       <p class="reveal">Estas páginas são um ponto de partida, não um ponto final. Se você tem dúvidas, objeções ou simplesmente quer conversar, entre em contato.</p>
-      <a href="/cdn-cgi/l/email-protection#7b1814150f1a0f143b1d1e091a011a1455181416551909" class="btn btn-primary reveal">Entrar em contato</a>
+      <a href="mailto:contato@ferazao.com.br" class="btn btn-primary reveal">Entrar em contato</a>
     </div>
   </section>
 
   <footer>
-    <p>Fé & Razão — Respostas para perguntas reais &nbsp;|&nbsp; <span>Versão 1.4</span></p>
+    <p>Fé & Razão — Respostas para perguntas reais &nbsp;|&nbsp; <span>Versão 1.5</span></p>
     <p style="margin-top:0.8rem;">Pr. João Alves &nbsp;|&nbsp;
       <a href="http://www.radiomateus633.com" target="_blank" style="color:var(--gold); text-decoration:none;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">www.radiomateus633.com</a>
     </p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.ad
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
