@@ -58,27 +58,8 @@
     .nav-links a { color: var(--gold); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.3s; }
     .nav-links a:hover { color: #fff; }
 
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 8rem 2rem 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      top: -20%; left: 50%;
-      transform: translateX(-50%);
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
+    #hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden; }
+    #hero::before { content: ''; position: absolute; top: -20%; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); pointer-events: none; }
 
     .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
     .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 700; line-height: 1.1; max-width: 900px; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s 0.4s forwards; }
@@ -109,21 +90,7 @@
     .quote-block { border-left: 2px solid var(--gold); padding: 1.2rem 1.8rem; margin: 2rem 0; background: var(--surface); }
     .quote-block p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--accent); margin: 0; }
 
-    .timeline-banner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--gold);
-      border-radius: 4px;
-      padding: 1.5rem 2rem;
-      margin: 2.5rem 0;
-      text-decoration: none;
-      transition: border-color 0.3s, background 0.3s;
-      cursor: pointer;
-    }
+    .timeline-banner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 4px; padding: 1.5rem 2rem; margin: 2.5rem 0; text-decoration: none; transition: border-color 0.3s, background 0.3s; cursor: pointer; }
     .timeline-banner:hover { border-color: var(--gold); background: var(--surface); }
     .timeline-banner-left h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); margin-bottom: 0.3rem; }
     .timeline-banner-left p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
@@ -149,22 +116,81 @@
     .reason-body h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
     .reason-body p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
 
+    /* ── OBJEÇÕES ── */
+    .objection-block {
+      margin: 2.5rem 0;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .objection-header {
+      background: var(--surface2);
+      padding: 1.2rem 1.8rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .objection-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #D85A30;
+      background: rgba(216,90,48,0.1);
+      border: 1px solid rgba(216,90,48,0.3);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .objection-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .objection-body { padding: 1.8rem; background: var(--surface); }
+    .objection-body p { font-size: 0.97rem; color: var(--text); margin-bottom: 1rem; }
+    .objection-body p:last-child { margin-bottom: 0; }
+
+    .objection-answer {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      padding: 1.2rem 1.5rem;
+      background: var(--surface2);
+      border-left: 2px solid var(--gold);
+    }
+
+    .objection-answer-icon {
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-top: 0.1rem;
+      min-width: 24px;
+    }
+
+    .objection-answer p { font-size: 0.95rem; color: var(--text); margin: 0; }
+
+    .logic-flow { margin: 2rem 0; display: flex; flex-direction: column; }
+    .logic-step { display: flex; align-items: stretch; gap: 1.5rem; }
+    .logic-left { display: flex; flex-direction: column; align-items: center; min-width: 20px; }
+    .logic-dot { width: 10px; height: 10px; min-height: 10px; border-radius: 50%; background: var(--gold-dim); margin-top: 0.6rem; }
+    .logic-line { width: 1px; flex: 1; background: var(--border); margin: 4px 0; }
+    .logic-step:last-child .logic-line { display: none; }
+    .logic-content { padding-bottom: 1.2rem; flex: 1; }
+    .logic-content h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--accent); margin-bottom: 0.3rem; }
+    .logic-content p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
+
     .compare-table { width: 100%; border-collapse: collapse; margin: 2.5rem 0; font-size: 0.95rem; }
     .compare-table th { font-family: 'Playfair Display', serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); padding: 1rem 1.2rem; border-bottom: 1px solid var(--gold-dim); text-align: left; }
     .compare-table td { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; }
     .compare-table tr:last-child td { border-bottom: none; }
     .compare-table tr:hover td { background: var(--surface2); color: var(--text); }
     .compare-table td:first-child { color: var(--accent); font-family: 'Playfair Display', serif; font-style: italic; }
-
-    .logic-flow { margin: 2.5rem 0; display: flex; flex-direction: column; }
-    .logic-step { display: flex; align-items: stretch; gap: 1.5rem; }
-    .logic-left { display: flex; flex-direction: column; align-items: center; min-width: 20px; }
-    .logic-dot { width: 10px; height: 10px; min-height: 10px; border-radius: 50%; background: var(--gold-dim); margin-top: 0.6rem; }
-    .logic-line { width: 1px; flex: 1; background: var(--border); margin: 4px 0; }
-    .logic-step:last-child .logic-line { display: none; }
-    .logic-content { padding-bottom: 1.5rem; flex: 1; }
-    .logic-content h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--accent); margin-bottom: 0.3rem; }
-    .logic-content p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
 
     #indice { background: var(--bg); }
     .index-list { margin-top: 2rem; display: flex; flex-direction: column; border: 1px solid var(--border); }
@@ -189,13 +215,14 @@
     .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    #arco      { background: var(--surface); }
-    #teologia  { background: var(--bg); }
-    #mal       { background: var(--surface); }
-    #inocentes { background: var(--bg); }
-    #intervalo { background: var(--surface); }
-    #heranca   { background: var(--bg); }
-    #experiencia { background: var(--surface); }
+    #arco       { background: var(--surface); }
+    #teologia   { background: var(--bg); }
+    #objecoes   { background: var(--surface); }
+    #mal        { background: var(--bg); }
+    #inocentes  { background: var(--surface); }
+    #intervalo  { background: var(--bg); }
+    #heranca    { background: var(--surface); }
+    #experiencia{ background: var(--bg); }
 
     @media (max-width: 640px) {
       nav { padding: 1rem 1.5rem; }
@@ -204,6 +231,7 @@
       .reason-tag { writing-mode: horizontal-tb; transform: none; }
       .reason-item { grid-template-columns: 1fr; }
       .timeline-banner { flex-direction: column; align-items: flex-start; }
+      .objection-header { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -214,6 +242,7 @@
     <ul class="nav-links">
       <li><a href="#arco">A História</a></li>
       <li><a href="#teologia">Teodicéia</a></li>
+      <li><a href="#objecoes">Objeções</a></li>
       <li><a href="#mal">O Mal</a></li>
       <li><a href="#inocentes">Os Inocentes</a></li>
       <li><a href="#intervalo">O Intervalo</a></li>
@@ -263,6 +292,105 @@
       <div class="quote-block reveal"><p>"É como julgar uma cirurgia pelo momento em que o bisturi corta, sem considerar a saúde que vem depois."</p></div>
       <p class="reveal">O erro mais comum no debate sobre o mal é avaliar um capítulo do meio como se fosse o livro inteiro. A dor é real — e deve ser respeitada. Mas ela não é a última palavra.</p>
       <p class="reveal">Dentro do arco bíblico, o mal tem <strong>origem identificada</strong> (Gênesis 3), <strong>natureza definida</strong> (consequência de liberdade real, não falha do Criador), <strong>duração limitada</strong> (o intervalo de Gn 4 a Ap 19 é um parêntese) e <strong>desfecho garantido</strong> (Apocalipse 20–22).</p>
+    </div>
+  </section>
+
+  <!-- NOVA SEÇÃO — OBJEÇÕES DO COTIDIANO -->
+  <section id="objecoes">
+    <div class="container">
+      <span class="section-label reveal">Objeções do Cotidiano</span>
+      <h2 class="section-title reveal">Quando a vida real<br/><em>questiona a fé</em></h2>
+      <div class="divider reveal"></div>
+      <p class="reveal">Algumas objeções não vêm de livros de filosofia — vêm da calçada, do hospital, do velório. São perguntas feitas com dor real. E merecem respostas igualmente reais.</p>
+      <p class="reveal">A cosmovisão bíblica não foge dessas perguntas. Ela as recebe — e as vira de cabeça para baixo.</p>
+
+      <!-- OBJEÇÃO 1: OS HOSPITAIS -->
+      <div class="objection-block reveal">
+        <div class="objection-header">
+          <span class="objection-tag">Objeção</span>
+          <p class="objection-text">"Os hospitais provam que Deus não existe. Se Ele fosse bom, não haveria doença."</p>
+        </div>
+        <div class="objection-body">
+          <p>É uma objeção visualmente poderosa. Quem já passou por um corredor de hospital sabe o peso que ela carrega. E merece ser levada a sério.</p>
+          <p>Mas há uma inversão lógica aqui que precisa ser examinada. A objeção assume que, se Deus existisse, não haveria doença. O que a Bíblia diz é exatamente o contrário — e é aqui que a cosmovisão bíblica surpreende:</p>
+
+          <div class="objection-answer">
+            <span class="objection-answer-icon">→</span>
+            <p>Os hospitais não provam a ausência de Deus. Provam a queda. São evidência de que estamos exatamente onde a Bíblia disse que estaríamos — numa criação que foi perfeita, foi corrompida, e ainda não foi restaurada.</p>
+          </div>
+
+          <p>Gênesis 1–2 descreve uma criação sem doença, sem morte, sem dor. Gênesis 3 descreve a ruptura que corrompeu essa criação. O hospital é o retrato fiel de uma criação que opera em modo corrompido — não uma prova de que o projeto falhou, mas de que o projeto foi sabotado.</p>
+
+          <div class="logic-flow">
+            <div class="logic-step">
+              <div class="logic-left"><div class="logic-dot"></div><div class="logic-line"></div></div>
+              <div class="logic-content"><h4>Se Gênesis 1–2 é verdadeiro</h4><p>A criação foi perfeita — sem doença, sem morte, sem hospital.</p></div>
+            </div>
+            <div class="logic-step">
+              <div class="logic-left"><div class="logic-dot"></div><div class="logic-line"></div></div>
+              <div class="logic-content"><h4>Se Gênesis 3 é verdadeiro</h4><p>A criação foi corrompida — a doença entrou como consequência da queda.</p></div>
+            </div>
+            <div class="logic-step">
+              <div class="logic-left"><div class="logic-dot"></div><div class="logic-line"></div></div>
+              <div class="logic-content"><h4>Se vivemos entre Gênesis 4 e Apocalipse 19</h4><p>Hospitais são exatamente o que esperaríamos ver — uma criação corrompida sendo sustentada no intervalo da redenção.</p></div>
+            </div>
+            <div class="logic-step">
+              <div class="logic-left"><div class="logic-dot"></div></div>
+              <div class="logic-content"><h4>Conclusão</h4><p>O hospital não é evidência contra Deus. É evidência de que a Bíblia descreve o mundo com precisão.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OBJEÇÃO 2: AS RELIGIÕES -->
+      <div class="objection-block reveal">
+        <div class="objection-header">
+          <span class="objection-tag">Objeção</span>
+          <p class="objection-text">"A religião é invenção humana — cada cultura cria seus próprios deuses."</p>
+        </div>
+        <div class="objection-body">
+          <p>A objeção tem um dado real: toda cultura humana conhecida na história produziu religião. Não existe civilização sem ela. Isso é um fato antropológico indiscutível.</p>
+          <p>Mas a conclusão que o ateísmo tira desse fato — que a religião é invenção — ignora uma pergunta muito mais profunda:</p>
+
+          <div class="objection-answer">
+            <span class="objection-answer-icon">→</span>
+            <p>Por que o ser humano, em todo lugar e em todo tempo, sente que há algo além — e anseia por isso? Por que a busca pelo divino é universal, mesmo em culturas que nunca se comunicaram entre si?</p>
+          </div>
+
+          <p>A Bíblia responde essa pergunta com uma precisão que a antropologia não consegue explicar de outra forma. Eclesiastes 3.11 registra que Deus <em>"pôs a eternidade no coração do homem."</em> A busca pelo divino não é invenção — é memória. É o eco de uma relação que existiu e foi perdida.</p>
+          <p>O homem foi criado em relação com Deus. A queda separou essa relação — mas não apagou a memória dela. As religiões existem porque o ser humano percebe intuitivamente a distância da perfeição e anseia voltar. Cada templo, cada ritual, cada oração em qualquer cultura é um sinal de que algo foi perdido e que o coração humano não se conformou com a perda.</p>
+
+          <div class="objection-answer">
+            <span class="objection-answer-icon">→</span>
+            <p>A universalidade da religião não prova que os deuses são invenção humana. Prova que o homem foi feito para Deus — e que mesmo separado d'Ele, não consegue parar de buscá-Lo.</p>
+          </div>
+
+          <div class="quote-block" style="margin-top:1.5rem;">
+            <p>"Ele pôs a eternidade no coração do homem, sem que este possa descobrir as obras que Deus fez desde o princípio até o fim." — Eclesiastes 3.11</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SÍNTESE DOS DOIS ARGUMENTOS -->
+      <div class="reveal" style="margin-top:2.5rem;">
+        <p>Os dois argumentos apontam para a mesma direção — e juntos formam uma resposta poderosa:</p>
+        <div class="two-col" style="margin-top:1.5rem;">
+          <div class="col-card">
+            <h4>O hospital</h4>
+            <p>Prova que algo está errado no mundo — exatamente o que a queda de Gênesis 3 anuncia.</p>
+            <p>O homem foi feito para a perfeição e vive num mundo corrompido.</p>
+          </div>
+          <div class="col-card">
+            <h4>A religião</h4>
+            <p>Prova que o homem sente que algo está errado — e anseia pela perfeição perdida.</p>
+            <p>A eternidade foi posta no coração humano e não pode ser silenciada.</p>
+          </div>
+        </div>
+        <div class="quote-block" style="margin-top:2rem;">
+          <p>"A doença e a religião dizem a mesma coisa: o homem foi feito para a perfeição, se separou dela — e sente falta."</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -375,11 +503,12 @@
       <div class="index-list reveal">
         <a href="#arco" class="index-item"><span class="index-num">01</span><div class="index-text"><span class="index-title">A Estrutura da História</span><span class="index-sub">O arco redentor — Gênesis 1 ao Apocalipse 22</span></div><span class="index-arrow">↓</span></a>
         <a href="#teologia" class="index-item"><span class="index-num">02</span><div class="index-text"><span class="index-title">Teodicéia</span><span class="index-sub">O problema do mal tem endereço e data</span></div><span class="index-arrow">↓</span></a>
-        <a href="#mal" class="index-item"><span class="index-num">03</span><div class="index-text"><span class="index-title">Mal Moral e Mal Natural</span><span class="index-sub">Duas categorias, duas origens, uma raiz</span></div><span class="index-arrow">↓</span></a>
-        <a href="#inocentes" class="index-item"><span class="index-num">04</span><div class="index-text"><span class="index-title">O Sofrimento dos Inocentes</span><span class="index-sub">A objeção mais difícil e a resposta mais profunda</span></div><span class="index-arrow">↓</span></a>
-        <a href="#intervalo" class="index-item"><span class="index-num">05</span><div class="index-text"><span class="index-title">Por que Deus Permite o Intervalo</span><span class="index-sub">Cinco razões dentro da cosmovisão bíblica</span></div><span class="index-arrow">↓</span></a>
-        <a href="#heranca" class="index-item"><span class="index-num">06</span><div class="index-text"><span class="index-title">A Herança da Natureza Corrompida</span><span class="index-sub">Qualquer ser livre poderia ter feito o mesmo</span></div><span class="index-arrow">↓</span></a>
-        <a href="#experiencia" class="index-item"><span class="index-num">07</span><div class="index-text"><span class="index-title">Conhecemos na Teoria e na Prática</span><span class="index-sub">E ainda assim pecamos — o argumento mais honesto</span></div><span class="index-arrow">↓</span></a>
+        <a href="#objecoes" class="index-item"><span class="index-num">03</span><div class="index-text"><span class="index-title">Objeções do Cotidiano</span><span class="index-sub">Os hospitais e as religiões — quando a vida real questiona a fé</span></div><span class="index-arrow">↓</span></a>
+        <a href="#mal" class="index-item"><span class="index-num">04</span><div class="index-text"><span class="index-title">Mal Moral e Mal Natural</span><span class="index-sub">Duas categorias, duas origens, uma raiz</span></div><span class="index-arrow">↓</span></a>
+        <a href="#inocentes" class="index-item"><span class="index-num">05</span><div class="index-text"><span class="index-title">O Sofrimento dos Inocentes</span><span class="index-sub">A objeção mais difícil e a resposta mais profunda</span></div><span class="index-arrow">↓</span></a>
+        <a href="#intervalo" class="index-item"><span class="index-num">06</span><div class="index-text"><span class="index-title">Por que Deus Permite o Intervalo</span><span class="index-sub">Cinco razões dentro da cosmovisão bíblica</span></div><span class="index-arrow">↓</span></a>
+        <a href="#heranca" class="index-item"><span class="index-num">07</span><div class="index-text"><span class="index-title">A Herança da Natureza Corrompida</span><span class="index-sub">Qualquer ser livre poderia ter feito o mesmo</span></div><span class="index-arrow">↓</span></a>
+        <a href="#experiencia" class="index-item"><span class="index-num">08</span><div class="index-text"><span class="index-title">Conhecemos na Teoria e na Prática</span><span class="index-sub">E ainda assim pecamos — o argumento mais honesto</span></div><span class="index-arrow">↓</span></a>
       </div>
     </div>
   </section>
@@ -395,7 +524,7 @@
   </section>
 
   <footer>
-    <p>Fé & Razão — Respostas para perguntas reais &nbsp;|&nbsp; <span>Versão 1.5</span></p>
+    <p>Fé & Razão — Respostas para perguntas reais &nbsp;|&nbsp; <span>Versão 1.6</span></p>
     <p style="margin-top:0.8rem;">Pr. João Alves &nbsp;|&nbsp;
       <a href="http://www.radiomateus633.com" target="_blank" style="color:var(--gold); text-decoration:none;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">www.radiomateus633.com</a>
     </p>
